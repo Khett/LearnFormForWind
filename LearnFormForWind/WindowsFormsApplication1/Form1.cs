@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void tsmiExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void tsmiAbout_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This program include few little program, \nwitch will be used.", "About Program");
         }
     }
 }
