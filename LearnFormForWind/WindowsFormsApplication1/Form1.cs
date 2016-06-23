@@ -13,9 +13,12 @@ namespace WindowsFormsApplication1
     public partial class MainForm : Form
     {
         int count=0;
+        Random rnd;
+
         public MainForm()
         {
             InitializeComponent();
+            rnd = new Random();
         }
 
         private void tsmiExit_Click(object sender, EventArgs e)
@@ -49,6 +52,18 @@ namespace WindowsFormsApplication1
         {
             count = 0;
             lblCount.Text = Convert.ToString(count);
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btngo_Click(object sender, EventArgs e)
+        {
+            int n;
+            n = rnd.Next(Convert.ToInt32(nudfrom.Value), Convert.ToInt32(nudto.Value));
+            lblrandom.Text = n.ToString();
         }
     }
 }
