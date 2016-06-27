@@ -46,6 +46,10 @@
             this.nudfrom = new System.Windows.Forms.NumericUpDown();
             this.lblrandom = new System.Windows.Forms.Label();
             this.btngo = new System.Windows.Forms.Button();
+            this.tbRandom = new System.Windows.Forms.TextBox();
+            this.btnRandomClear = new System.Windows.Forms.Button();
+            this.btnRandomCopy = new System.Windows.Forms.Button();
+            this.cbRandom = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -166,6 +170,10 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.cbRandom);
+            this.tabPage2.Controls.Add(this.btnRandomCopy);
+            this.tabPage2.Controls.Add(this.btnRandomClear);
+            this.tabPage2.Controls.Add(this.tbRandom);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.nudto);
@@ -255,6 +263,48 @@
             this.btngo.UseVisualStyleBackColor = true;
             this.btngo.Click += new System.EventHandler(this.btngo_Click);
             // 
+            // tbRandom
+            // 
+            this.tbRandom.Location = new System.Drawing.Point(355, 231);
+            this.tbRandom.Multiline = true;
+            this.tbRandom.Name = "tbRandom";
+            this.tbRandom.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbRandom.Size = new System.Drawing.Size(129, 132);
+            this.tbRandom.TabIndex = 6;
+            this.tbRandom.TextChanged += new System.EventHandler(this.tbRandom_TextChanged);
+            // 
+            // btnRandomClear
+            // 
+            this.btnRandomClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnRandomClear.Location = new System.Drawing.Point(261, 231);
+            this.btnRandomClear.Name = "btnRandomClear";
+            this.btnRandomClear.Size = new System.Drawing.Size(88, 132);
+            this.btnRandomClear.TabIndex = 7;
+            this.btnRandomClear.Text = "Clear it ->";
+            this.btnRandomClear.UseVisualStyleBackColor = true;
+            this.btnRandomClear.Click += new System.EventHandler(this.btnRandomClear_Click);
+            // 
+            // btnRandomCopy
+            // 
+            this.btnRandomCopy.Location = new System.Drawing.Point(355, 360);
+            this.btnRandomCopy.Name = "btnRandomCopy";
+            this.btnRandomCopy.Size = new System.Drawing.Size(129, 23);
+            this.btnRandomCopy.TabIndex = 8;
+            this.btnRandomCopy.Text = "Copy";
+            this.btnRandomCopy.UseVisualStyleBackColor = true;
+            this.btnRandomCopy.Click += new System.EventHandler(this.btnRandomCopy_Click);
+            // 
+            // cbRandom
+            // 
+            this.cbRandom.AutoSize = true;
+            this.cbRandom.Location = new System.Drawing.Point(356, 210);
+            this.cbRandom.Name = "cbRandom";
+            this.cbRandom.Size = new System.Drawing.Size(60, 17);
+            this.cbRandom.TabIndex = 9;
+            this.cbRandom.Text = "Unique";
+            this.cbRandom.UseVisualStyleBackColor = true;
+            this.cbRandom.CheckedChanged += new System.EventHandler(this.cbRandom_CheckedChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -300,6 +350,10 @@
         private System.Windows.Forms.NumericUpDown nudfrom;
         private System.Windows.Forms.Label lblrandom;
         private System.Windows.Forms.Button btngo;
+        private System.Windows.Forms.TextBox tbRandom;
+        private System.Windows.Forms.Button btnRandomClear;
+        private System.Windows.Forms.Button btnRandomCopy;
+        private System.Windows.Forms.CheckBox cbRandom;
     }
 }
 

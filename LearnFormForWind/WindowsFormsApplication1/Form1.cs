@@ -64,6 +64,38 @@ namespace WindowsFormsApplication1
             int n;
             n = rnd.Next(Convert.ToInt32(nudfrom.Value), Convert.ToInt32(nudto.Value));
             lblrandom.Text = n.ToString();
+            if (cbRandom.Checked)
+            {
+                int i = 0;
+                while (tbRandom.Text.IndexOf(n.ToString()) != -1)
+                {
+                    n = rnd.Next(Convert.ToInt32(nudfrom.Value), Convert.ToInt32(nudto.Value));
+                    i++;
+                    if (i > 1000) break;
+                }
+                if (i <= 1000) tbRandom.AppendText(n + "\n");
+            }
+           else tbRandom.AppendText(n + "\n");
+        }
+
+        private void tbRandom_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRandomClear_Click(object sender, EventArgs e)
+        {
+            tbRandom.Clear();
+        }
+
+        private void btnRandomCopy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(tbRandom.Text);
+        }
+
+        private void cbRandom_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
