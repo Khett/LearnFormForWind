@@ -33,7 +33,7 @@ namespace WindowsFormsApplication1
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            LoadNotepad();
         }
 
         private void btnPlus_Click(object sender, EventArgs e)
@@ -96,6 +96,45 @@ namespace WindowsFormsApplication1
         private void cbRandom_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void tsmiInsertDate_Click(object sender, EventArgs e)
+        {
+           rtbNotepad.AppendText ("\n" + DateTime.Now.ToShortDateString() + "\n");
+        }
+
+        private void tsmiInsertTime_Click(object sender, EventArgs e)
+        {
+            rtbNotepad.AppendText("\n" + DateTime.Now.ToShortTimeString() + "\n");
+        }
+
+        private void tsmiSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                rtbNotepad.SaveFile("notepad.rtf");
+            }
+            catch
+            {
+                MessageBox.Show("Save Error");
+            }
+        }
+
+        void LoadNotepad()
+        {
+            try
+            {
+                rtbNotepad.LoadFile("notepad.rtf");
+            }
+            catch
+            {
+                MessageBox.Show("Loading Error");
+            }
+        }
+
+private void tsmiLoad_Click(object sender, EventArgs e)
+        {
+            LoadNotepad();
         }
     }
 }
