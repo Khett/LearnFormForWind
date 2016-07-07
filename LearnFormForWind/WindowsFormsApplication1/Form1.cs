@@ -14,6 +14,7 @@ namespace WindowsFormsApplication1
     {
         int count=0;
         Random rnd;
+        char[] spec_chars = new char[] { '%', '*', ')', '?', '#', '$', '^', '&', '~' };
 
         public MainForm()
         {
@@ -135,6 +136,35 @@ namespace WindowsFormsApplication1
 private void tsmiLoad_Click(object sender, EventArgs e)
         {
             LoadNotepad();
+        }
+
+        private void tabPage4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCreatePass_Click(object sender, EventArgs e)
+        {
+            if (clbPassTypeCheck.CheckedItems.Count == 0) return;
+            string password = "";
+            for (int i=0; i<nudPassLenght.Value;i++)
+            {
+                int n = rnd.Next(0, clbPassTypeCheck.CheckedItems.Count);
+                string s = clbPassTypeCheck.CheckedItems[n].ToString();
+                switch (s)
+                {
+                    case "Numbers": password += rnd.Next(10).ToString();
+                        break;
+                    case "Upper case": password += Convert.ToChar(rnd.Next(65,88));
+                        break;
+                    case "Lower case": password += Convert.ToChar(rnd.Next(97, 122));
+                        break;
+                    default:
+                        password += spec_chars[rnd.Next(spec_chars.Length)];
+                        break;
+                }
+                tbPass.Text = password;
+            }
         }
     }
 }

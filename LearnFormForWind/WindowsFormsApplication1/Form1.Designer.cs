@@ -36,6 +36,9 @@
             this.notepadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiInsertDate = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiInsertTime = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiLoad = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.rtbNotepad = new System.Windows.Forms.RichTextBox();
@@ -55,9 +58,12 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnMinus = new System.Windows.Forms.Button();
             this.btnPlus = new System.Windows.Forms.Button();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsmiSave = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiLoad = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.clbPassTypeCheck = new System.Windows.Forms.CheckedListBox();
+            this.nudPassLenght = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnCreatePass = new System.Windows.Forms.Button();
+            this.tbPass = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -65,6 +71,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudfrom)).BeginInit();
             this.tabPage1.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPassLenght)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -137,8 +145,28 @@
             this.tsmiInsertTime.Text = "Insert Time";
             this.tsmiInsertTime.Click += new System.EventHandler(this.tsmiInsertTime_Click);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            // 
+            // tsmiSave
+            // 
+            this.tsmiSave.Name = "tsmiSave";
+            this.tsmiSave.Size = new System.Drawing.Size(152, 22);
+            this.tsmiSave.Text = "Save";
+            this.tsmiSave.Click += new System.EventHandler(this.tsmiSave_Click);
+            // 
+            // tsmiLoad
+            // 
+            this.tsmiLoad.Name = "tsmiLoad";
+            this.tsmiLoad.Size = new System.Drawing.Size(152, 22);
+            this.tsmiLoad.Text = "Load";
+            this.tsmiLoad.Click += new System.EventHandler(this.tsmiLoad_Click);
+            // 
             // tabControl1
             // 
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -363,24 +391,78 @@
             this.btnPlus.UseVisualStyleBackColor = true;
             this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
             // 
-            // toolStripMenuItem1
+            // tabPage4
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
+            this.tabPage4.Controls.Add(this.tbPass);
+            this.tabPage4.Controls.Add(this.btnCreatePass);
+            this.tabPage4.Controls.Add(this.label1);
+            this.tabPage4.Controls.Add(this.nudPassLenght);
+            this.tabPage4.Controls.Add(this.clbPassTypeCheck);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(530, 389);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "PasswordGenerator";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
             // 
-            // tsmiSave
+            // clbPassTypeCheck
             // 
-            this.tsmiSave.Name = "tsmiSave";
-            this.tsmiSave.Size = new System.Drawing.Size(152, 22);
-            this.tsmiSave.Text = "Save";
-            this.tsmiSave.Click += new System.EventHandler(this.tsmiSave_Click);
+            this.clbPassTypeCheck.CheckOnClick = true;
+            this.clbPassTypeCheck.FormattingEnabled = true;
+            this.clbPassTypeCheck.Items.AddRange(new object[] {
+            "Numbers",
+            "Upper case",
+            "Lower case",
+            "Special symbol: %, *, ), ?, #, $, ^, &, ~"});
+            this.clbPassTypeCheck.Location = new System.Drawing.Point(19, 22);
+            this.clbPassTypeCheck.Name = "clbPassTypeCheck";
+            this.clbPassTypeCheck.Size = new System.Drawing.Size(299, 64);
+            this.clbPassTypeCheck.TabIndex = 0;
             // 
-            // tsmiLoad
+            // nudPassLenght
             // 
-            this.tsmiLoad.Name = "tsmiLoad";
-            this.tsmiLoad.Size = new System.Drawing.Size(152, 22);
-            this.tsmiLoad.Text = "Load";
-            this.tsmiLoad.Click += new System.EventHandler(this.tsmiLoad_Click);
+            this.nudPassLenght.Location = new System.Drawing.Point(91, 91);
+            this.nudPassLenght.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudPassLenght.Name = "nudPassLenght";
+            this.nudPassLenght.Size = new System.Drawing.Size(86, 20);
+            this.nudPassLenght.TabIndex = 1;
+            this.nudPassLenght.Value = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 93);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Lenght Pass";
+            // 
+            // btnCreatePass
+            // 
+            this.btnCreatePass.Location = new System.Drawing.Point(188, 91);
+            this.btnCreatePass.Name = "btnCreatePass";
+            this.btnCreatePass.Size = new System.Drawing.Size(130, 20);
+            this.btnCreatePass.TabIndex = 3;
+            this.btnCreatePass.Text = "Generate now";
+            this.btnCreatePass.UseVisualStyleBackColor = true;
+            this.btnCreatePass.Click += new System.EventHandler(this.btnCreatePass_Click);
+            // 
+            // tbPass
+            // 
+            this.tbPass.Location = new System.Drawing.Point(19, 129);
+            this.tbPass.Name = "tbPass";
+            this.tbPass.Size = new System.Drawing.Size(299, 20);
+            this.tbPass.TabIndex = 4;
             // 
             // MainForm
             // 
@@ -403,6 +485,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudfrom)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPassLenght)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -440,6 +525,12 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem tsmiSave;
         private System.Windows.Forms.ToolStripMenuItem tsmiLoad;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown nudPassLenght;
+        private System.Windows.Forms.CheckedListBox clbPassTypeCheck;
+        private System.Windows.Forms.TextBox tbPass;
+        private System.Windows.Forms.Button btnCreatePass;
     }
 }
 
