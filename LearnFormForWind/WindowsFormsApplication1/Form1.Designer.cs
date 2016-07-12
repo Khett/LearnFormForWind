@@ -40,6 +40,12 @@
             this.tsmiSave = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiLoad = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tbPass = new System.Windows.Forms.TextBox();
+            this.btnCreatePass = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.nudPassLenght = new System.Windows.Forms.NumericUpDown();
+            this.clbPassTypeCheck = new System.Windows.Forms.CheckedListBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.rtbNotepad = new System.Windows.Forms.RichTextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -58,21 +64,24 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnMinus = new System.Windows.Forms.Button();
             this.btnPlus = new System.Windows.Forms.Button();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.clbPassTypeCheck = new System.Windows.Forms.CheckedListBox();
-            this.nudPassLenght = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnCreatePass = new System.Windows.Forms.Button();
-            this.tbPass = new System.Windows.Forms.TextBox();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.cbFrom = new System.Windows.Forms.ComboBox();
+            this.cbTo = new System.Windows.Forms.ComboBox();
+            this.btnConvert = new System.Windows.Forms.Button();
+            this.tbFrom = new System.Windows.Forms.TextBox();
+            this.tbTo = new System.Windows.Forms.TextBox();
+            this.btnSwap = new System.Windows.Forms.Button();
+            this.cbMetric = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPassLenght)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudfrom)).BeginInit();
             this.tabPage1.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPassLenght)).BeginInit();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -166,6 +175,7 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
@@ -177,6 +187,79 @@
             this.tabControl1.Size = new System.Drawing.Size(538, 415);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 1;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.tbPass);
+            this.tabPage4.Controls.Add(this.btnCreatePass);
+            this.tabPage4.Controls.Add(this.label1);
+            this.tabPage4.Controls.Add(this.nudPassLenght);
+            this.tabPage4.Controls.Add(this.clbPassTypeCheck);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(530, 389);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "PasswordGenerator";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
+            // 
+            // tbPass
+            // 
+            this.tbPass.Location = new System.Drawing.Point(19, 129);
+            this.tbPass.Name = "tbPass";
+            this.tbPass.Size = new System.Drawing.Size(299, 20);
+            this.tbPass.TabIndex = 4;
+            // 
+            // btnCreatePass
+            // 
+            this.btnCreatePass.Location = new System.Drawing.Point(188, 91);
+            this.btnCreatePass.Name = "btnCreatePass";
+            this.btnCreatePass.Size = new System.Drawing.Size(130, 20);
+            this.btnCreatePass.TabIndex = 3;
+            this.btnCreatePass.Text = "Generate now";
+            this.btnCreatePass.UseVisualStyleBackColor = true;
+            this.btnCreatePass.Click += new System.EventHandler(this.btnCreatePass_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 93);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Lenght Pass";
+            // 
+            // nudPassLenght
+            // 
+            this.nudPassLenght.Location = new System.Drawing.Point(91, 91);
+            this.nudPassLenght.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudPassLenght.Name = "nudPassLenght";
+            this.nudPassLenght.Size = new System.Drawing.Size(86, 20);
+            this.nudPassLenght.TabIndex = 1;
+            this.nudPassLenght.Value = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
+            // 
+            // clbPassTypeCheck
+            // 
+            this.clbPassTypeCheck.CheckOnClick = true;
+            this.clbPassTypeCheck.FormattingEnabled = true;
+            this.clbPassTypeCheck.Items.AddRange(new object[] {
+            "Numbers",
+            "Upper case",
+            "Lower case",
+            "Special symbol: %, *, ), ?, #, $, ^, &, ~"});
+            this.clbPassTypeCheck.Location = new System.Drawing.Point(19, 22);
+            this.clbPassTypeCheck.Name = "clbPassTypeCheck";
+            this.clbPassTypeCheck.Size = new System.Drawing.Size(299, 64);
+            this.clbPassTypeCheck.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -391,78 +474,109 @@
             this.btnPlus.UseVisualStyleBackColor = true;
             this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
             // 
-            // tabPage4
+            // tabPage5
             // 
-            this.tabPage4.Controls.Add(this.tbPass);
-            this.tabPage4.Controls.Add(this.btnCreatePass);
-            this.tabPage4.Controls.Add(this.label1);
-            this.tabPage4.Controls.Add(this.nudPassLenght);
-            this.tabPage4.Controls.Add(this.clbPassTypeCheck);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(530, 389);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "PasswordGenerator";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
+            this.tabPage5.Controls.Add(this.cbMetric);
+            this.tabPage5.Controls.Add(this.btnSwap);
+            this.tabPage5.Controls.Add(this.tbTo);
+            this.tabPage5.Controls.Add(this.tbFrom);
+            this.tabPage5.Controls.Add(this.btnConvert);
+            this.tabPage5.Controls.Add(this.cbTo);
+            this.tabPage5.Controls.Add(this.cbFrom);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(530, 389);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Converter";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // clbPassTypeCheck
+            // cbFrom
             // 
-            this.clbPassTypeCheck.CheckOnClick = true;
-            this.clbPassTypeCheck.FormattingEnabled = true;
-            this.clbPassTypeCheck.Items.AddRange(new object[] {
-            "Numbers",
-            "Upper case",
-            "Lower case",
-            "Special symbol: %, *, ), ?, #, $, ^, &, ~"});
-            this.clbPassTypeCheck.Location = new System.Drawing.Point(19, 22);
-            this.clbPassTypeCheck.Name = "clbPassTypeCheck";
-            this.clbPassTypeCheck.Size = new System.Drawing.Size(299, 64);
-            this.clbPassTypeCheck.TabIndex = 0;
+            this.cbFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cbFrom.FormattingEnabled = true;
+            this.cbFrom.Items.AddRange(new object[] {
+            "mm",
+            "cm",
+            "dm",
+            "m",
+            "km",
+            "mile"});
+            this.cbFrom.Location = new System.Drawing.Point(44, 90);
+            this.cbFrom.Name = "cbFrom";
+            this.cbFrom.Size = new System.Drawing.Size(155, 28);
+            this.cbFrom.TabIndex = 0;
+            this.cbFrom.Text = "mm";
             // 
-            // nudPassLenght
+            // cbTo
             // 
-            this.nudPassLenght.Location = new System.Drawing.Point(91, 91);
-            this.nudPassLenght.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudPassLenght.Name = "nudPassLenght";
-            this.nudPassLenght.Size = new System.Drawing.Size(86, 20);
-            this.nudPassLenght.TabIndex = 1;
-            this.nudPassLenght.Value = new decimal(new int[] {
-            6,
-            0,
-            0,
-            0});
+            this.cbTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cbTo.FormattingEnabled = true;
+            this.cbTo.Items.AddRange(new object[] {
+            "mm",
+            "cm",
+            "dm",
+            "m",
+            "km",
+            "mile"});
+            this.cbTo.Location = new System.Drawing.Point(332, 90);
+            this.cbTo.Name = "cbTo";
+            this.cbTo.Size = new System.Drawing.Size(155, 28);
+            this.cbTo.TabIndex = 1;
+            this.cbTo.Text = "mm";
             // 
-            // label1
+            // btnConvert
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 93);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Lenght Pass";
+            this.btnConvert.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnConvert.Location = new System.Drawing.Point(205, 119);
+            this.btnConvert.Name = "btnConvert";
+            this.btnConvert.Size = new System.Drawing.Size(121, 30);
+            this.btnConvert.TabIndex = 2;
+            this.btnConvert.Text = "Convert";
+            this.btnConvert.UseVisualStyleBackColor = true;
+            this.btnConvert.Click += new System.EventHandler(this.btnConvert_Click);
             // 
-            // btnCreatePass
+            // tbFrom
             // 
-            this.btnCreatePass.Location = new System.Drawing.Point(188, 91);
-            this.btnCreatePass.Name = "btnCreatePass";
-            this.btnCreatePass.Size = new System.Drawing.Size(130, 20);
-            this.btnCreatePass.TabIndex = 3;
-            this.btnCreatePass.Text = "Generate now";
-            this.btnCreatePass.UseVisualStyleBackColor = true;
-            this.btnCreatePass.Click += new System.EventHandler(this.btnCreatePass_Click);
+            this.tbFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbFrom.Location = new System.Drawing.Point(44, 118);
+            this.tbFrom.Name = "tbFrom";
+            this.tbFrom.Size = new System.Drawing.Size(155, 26);
+            this.tbFrom.TabIndex = 3;
+            this.tbFrom.Text = "1";
             // 
-            // tbPass
+            // tbTo
             // 
-            this.tbPass.Location = new System.Drawing.Point(19, 129);
-            this.tbPass.Name = "tbPass";
-            this.tbPass.Size = new System.Drawing.Size(299, 20);
-            this.tbPass.TabIndex = 4;
+            this.tbTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbTo.Location = new System.Drawing.Point(332, 118);
+            this.tbTo.Name = "tbTo";
+            this.tbTo.ReadOnly = true;
+            this.tbTo.Size = new System.Drawing.Size(155, 26);
+            this.tbTo.TabIndex = 4;
+            // 
+            // btnSwap
+            // 
+            this.btnSwap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnSwap.Location = new System.Drawing.Point(205, 90);
+            this.btnSwap.Name = "btnSwap";
+            this.btnSwap.Size = new System.Drawing.Size(121, 30);
+            this.btnSwap.TabIndex = 5;
+            this.btnSwap.Text = "< --- >";
+            this.btnSwap.UseVisualStyleBackColor = true;
+            this.btnSwap.Click += new System.EventHandler(this.btnSwap_Click);
+            // 
+            // cbMetric
+            // 
+            this.cbMetric.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cbMetric.FormattingEnabled = true;
+            this.cbMetric.Items.AddRange(new object[] {
+            "length",
+            "weight"});
+            this.cbMetric.Location = new System.Drawing.Point(187, 45);
+            this.cbMetric.Name = "cbMetric";
+            this.cbMetric.Size = new System.Drawing.Size(155, 28);
+            this.cbMetric.TabIndex = 6;
+            this.cbMetric.Text = "length";
+            this.cbMetric.SelectedIndexChanged += new System.EventHandler(this.cbMetric_SelectedIndexChanged);
             // 
             // MainForm
             // 
@@ -478,6 +592,9 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPassLenght)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -485,9 +602,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudfrom)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPassLenght)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -531,6 +647,14 @@
         private System.Windows.Forms.CheckedListBox clbPassTypeCheck;
         private System.Windows.Forms.TextBox tbPass;
         private System.Windows.Forms.Button btnCreatePass;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TextBox tbTo;
+        private System.Windows.Forms.TextBox tbFrom;
+        private System.Windows.Forms.Button btnConvert;
+        private System.Windows.Forms.ComboBox cbTo;
+        private System.Windows.Forms.ComboBox cbFrom;
+        private System.Windows.Forms.Button btnSwap;
+        private System.Windows.Forms.ComboBox cbMetric;
     }
 }
 
